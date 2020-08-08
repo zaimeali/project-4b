@@ -3,6 +3,8 @@ import React, { useEffect } from 'react'
 // Web Animation API
 import useWebAnimations from "@wellyshen/use-web-animations"
 
+// CSS
+import './App.css'
 
 const Banner = () => {
 
@@ -83,7 +85,7 @@ const Banner = () => {
 
     const { ref: bgBook, getAnimation: bookAnimation } = useWebAnimations({
         keyframes: [
-
+            {  }
         ],
         timing: {
             duration: 3000,
