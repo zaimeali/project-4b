@@ -23,7 +23,7 @@ const Banner = () => {
     const { ref: eyeBBlink, getAnimation: eyeBBlinkAnimation } = useWebAnimations({
         keyframes: [
             { transform: "translateX(0px)" },
-            { transform: "translateX(4px)" },
+            { transform: "translateX(6px)" },
         ],
         timing: {
             duration: 2000,
@@ -58,9 +58,9 @@ const Banner = () => {
 
     const { ref: coffee, getAnimation: coffeeAnimation } = useWebAnimations({
         keyframes: [
-            { transform: "translateY(-3px)", },
+            { transform: "translateY(-5px)", },
             { transform: "translateY(0px)", },
-            { transform: "translateY(3px)", },
+            { transform: "translateY(5px)", },
         ],
         timing: {
             duration: 2000,
@@ -72,14 +72,13 @@ const Banner = () => {
 
     const { ref: girlArm, getAnimation: girlArmAnimation } = useWebAnimations({
         keyframes: [
-            { transform: "rotate(0.8deg)", transformOrigin: "bottom" },
+            { transform: "rotate(0.8deg)", },
         ],
         timing: {
             duration: 2000,
             iterations: Infinity,
             fill: "forwards",
             direction: "alternate",
-            origin: "bottom",
         },
     });
 
@@ -95,13 +94,26 @@ const Banner = () => {
 
     const { ref: bgSetting, getAnimation: settingAnimation } = useWebAnimations({
         keyframes: [
-            {  },
+        ],
+        timing: {
+            duration: 1000,
+            iterations: Infinity,
+        },
+    });
+
+    const { ref: bgAnim, getAnimation: bgAnimation } = useWebAnimations({
+        keyframes: [
+            { transform: "translateX(10px)", },
+            { transform: "translateY(-10px)", },
+            { transform: "translateX(-5px)", },
         ],
         timing: {
             duration: 3000,
             iterations: Infinity,
+            direction: "alternate",
         },
     });
+
 
     useEffect(() => {
         eyeGBlinkAnimation();
@@ -112,6 +124,7 @@ const Banner = () => {
         girlArmAnimation();
         bookAnimation();
         settingAnimation();
+        bgAnimation();
     }, [
         eyeGBlinkAnimation, 
         eyeGBrowAnimation, 
@@ -121,6 +134,7 @@ const Banner = () => {
         girlArmAnimation,
         bookAnimation,
         settingAnimation,
+        bgAnimation,
     ]) 
 
     return (
@@ -1904,7 +1918,7 @@ const Banner = () => {
                  </g>
          
                  {/* <!-- Bg Animation --> */}
-                 <g id="bg-animation">
+                 <g ref={ bgAnim } id="bg-animation">
                      {/* <!-- Setting Icon --> */}
                      <g ref={ bgSetting } id="setting-icon" transform="matrix(0.811213493347168,0.5847501158714294,-0.5847501158714294,0.811213493347168,431.9593811035156,288.8301696777344)" opacity="1" style={{ display: "block"}}>
                          <g opacity="1" transform="matrix(1,0,0,1,0,0)">

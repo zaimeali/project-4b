@@ -1,9 +1,48 @@
 .App {
   text-align: center;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 svg{
-  /* width: 500px !important; */
+  margin-top: -130px !important;
+  width: 700px !important;
+}
+
+@media (max-width: 769px){
+  svg{
+    width: 700px !important;
+  }
+}
+
+@media (max-width: 426px){
+  svg{
+    width: 420px !important;
+  }
+}
+
+@media (max-width: 376px){
+  svg{
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 321px){
+  svg{
+    width: 300px !important;
+  }
+}
+
+.Nav{
+  background-color: white !important;
+  display: flex;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .App-logo {
